@@ -995,82 +995,108 @@
 
 
 /* =========================================================
-   HERO — MOBILE CROPPING FIX
-   Keep the full 16:9 hero artwork visible on phones while
-   retaining a cinematic background behind the content.
+   MOBILE HERO — FULL IMAGE / NO CROPPING
    ========================================================= */
 
 @media (max-width: 720px) {
+
     .hero {
-        min-height: 760px;
-        height: auto;
-        align-items: flex-end;
-        padding-bottom: 72px;
-        overflow: hidden;
+        min-height: auto !important;
+        height: auto !important;
+        display: block !important;
+        padding: 0 !important;
+        position: relative;
+        background: #29160e;
     }
 
-    /* Blurred/fill layer prevents empty bands while the
-       foreground layer below shows the complete artwork. */
+    /* Full 16:9 hero artwork */
     .hero-media {
-        background-size: cover;
-        background-position: center center;
-        transform: none;
-        overflow: hidden;
+        position: relative !important;
+        inset: auto !important;
+
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1672 / 941;
+
+        background-size: 100% auto !important;
+        background-position: center top !important;
+        background-repeat: no-repeat !important;
+
+        transform: none !important;
     }
 
-    .hero-media::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: url('../assets/images/hero/icoffee-hero.webp') center / contain no-repeat;
-        z-index: 1;
-    }
-
+    /* Keep the image visible without cropping */
     .hero-media::after {
         content: "";
-        position: absolute;
-        inset: -24px;
-        background: url('../assets/images/hero/icoffee-hero.webp') center / cover no-repeat;
-        filter: blur(18px);
-        opacity: .55;
-        transform: scale(1.05);
-        z-index: 0;
+        display: block;
+        width: 100%;
+        padding-top: 56.28%;
     }
 
+    /* Remove desktop vignette over the image */
     .hero-vignette {
-        z-index: -2;
+        position: absolute;
+        inset: 0;
+        height: 56.28vw;
+
+        background:
+            linear-gradient(
+                180deg,
+                rgba(25, 12, 7, 0.05) 0%,
+                rgba(25, 12, 7, 0.08) 60%,
+                rgba(25, 12, 7, 0.35) 100%
+            ) !important;
     }
 
+    /* Text becomes a proper mobile content block */
     .hero-copy {
         position: relative;
-        z-index: 2;
-        width: auto;
-        margin: 0 24px;
-        padding-top: 300px;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero {
-        min-height: 720px;
-        padding-bottom: 58px;
+        width: auto !important;
+        margin: 0 !important;
+        padding: 42px 24px 70px !important;
+        background: #29160e;
     }
 
-    .hero-copy {
-        margin: 0 20px;
-        padding-top: 260px;
+    .hero-copy .eyebrow {
+        margin-bottom: 0;
     }
 
     .hero h1 {
-        font-size: clamp(52px, 16vw, 74px);
+        margin-top: 18px !important;
+        font-size: clamp(58px, 17vw, 78px) !important;
+        line-height: .88 !important;
     }
 
     .hero-copy > p {
-        font-size: 18px;
-        max-width: 360px;
+        margin-top: 24px !important;
+        max-width: 100%;
+        font-size: 20px !important;
+        line-height: 1.35;
     }
 
     .hero-ctas {
-        margin-top: 24px;
+        margin-top: 30px !important;
+        display: flex;
+        flex-direction: row !important;
+        align-items: center;
+    }
+
+    .hero-ctas .btn {
+        white-space: nowrap;
+    }
+
+    .hero-trust {
+        margin-top: 42px !important;
+        padding-top: 20px;
+        gap: 14px;
+    }
+
+    .hero-trust span {
+        font-size: 10px !important;
+    }
+
+    .scroll-cue,
+    .hero-pagination {
+        display: none !important;
     }
 }
