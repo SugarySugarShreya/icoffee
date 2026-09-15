@@ -994,109 +994,158 @@
 }
 
 
+
 /* =========================================================
-   MOBILE HERO — FULL IMAGE / NO CROPPING
+   ICOFFEE — MOBILE HERO FINAL FIX
+   Full product composition + text over image
+   Desktop/tablet hero remains unchanged.
    ========================================================= */
 
 @media (max-width: 720px) {
-
     .hero {
-        min-height: auto !important;
-        height: auto !important;
-        display: block !important;
+        min-height: 760px !important;
+        height: 760px !important;
         padding: 0 !important;
-        position: relative;
-        background: #29160e;
+        display: flex !important;
+        align-items: flex-start !important;
+        overflow: hidden !important;
+        background: #29160e !important;
     }
 
-    /* Full 16:9 hero artwork */
+    /*
+       The source hero is 16:9. On a phone, 'cover' necessarily
+       crops one side. Instead, show the complete artwork at the
+       phone width and let the dark hero background continue above
+       and below it.
+    */
     .hero-media {
-        position: relative !important;
-        inset: auto !important;
-
-        width: 100%;
-        height: auto;
-        aspect-ratio: 1672 / 941;
-
-        background-size: 100% auto !important;
-        background-position: center top !important;
-        background-repeat: no-repeat !important;
-
+        position: absolute !important;
+        inset: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
         transform: none !important;
+        background-size: 100% auto !important;
+        background-position: center 34% !important;
+        background-repeat: no-repeat !important;
+        background-color: #29160e !important;
+        z-index: -3 !important;
     }
 
-    /* Keep the image visible without cropping */
-    .hero-media::after {
-        content: "";
-        display: block;
-        width: 100%;
-        padding-top: 56.28%;
+    .hero:hover .hero-media {
+        background-size: 100% auto !important;
+        filter: none !important;
     }
 
-    /* Remove desktop vignette over the image */
+    /* Keep the image dark enough for the white editorial type. */
     .hero-vignette {
-        position: absolute;
-        inset: 0;
-        height: 56.28vw;
-
+        position: absolute !important;
+        inset: 0 !important;
+        z-index: -2 !important;
+        pointer-events: none !important;
         background:
             linear-gradient(
                 180deg,
-                rgba(25, 12, 7, 0.05) 0%,
-                rgba(25, 12, 7, 0.08) 60%,
-                rgba(25, 12, 7, 0.35) 100%
+                rgba(25, 12, 7, .28) 0%,
+                rgba(25, 12, 7, .08) 25%,
+                rgba(25, 12, 7, .10) 48%,
+                rgba(25, 12, 7, .48) 100%
             ) !important;
     }
 
-    /* Text becomes a proper mobile content block */
     .hero-copy {
-        position: relative;
-        width: auto !important;
-        margin: 0 !important;
-        padding: 42px 24px 70px !important;
-        background: #29160e;
+        position: relative !important;
+        z-index: 2 !important;
+        width: calc(100% - 48px) !important;
+        margin: 0 24px !important;
+        padding-top: 190px !important;
     }
 
-    .hero-copy .eyebrow {
-        margin-bottom: 0;
+    .eyebrow {
+        gap: 12px !important;
+        font-size: 10px !important;
+        letter-spacing: .22em !important;
+        white-space: nowrap !important;
+    }
+
+    .eyebrow i {
+        width: 54px !important;
+        flex: 0 0 54px !important;
     }
 
     .hero h1 {
-        margin-top: 18px !important;
-        font-size: clamp(58px, 17vw, 78px) !important;
-        line-height: .88 !important;
+        margin-top: 14px !important;
+        font-size: clamp(58px, 16.8vw, 76px) !important;
+        line-height: .86 !important;
+        letter-spacing: -.045em !important;
+        max-width: 330px !important;
+        text-shadow: 0 2px 20px rgba(0,0,0,.12) !important;
     }
 
     .hero-copy > p {
-        margin-top: 24px !important;
-        max-width: 100%;
-        font-size: 20px !important;
-        line-height: 1.35;
+        margin-top: 20px !important;
+        max-width: 315px !important;
+        font-size: 19px !important;
+        line-height: 1.3 !important;
+        text-shadow: 0 2px 14px rgba(0,0,0,.18) !important;
     }
 
     .hero-ctas {
-        margin-top: 30px !important;
-        display: flex;
+        margin-top: 27px !important;
         flex-direction: row !important;
-        align-items: center;
+        align-items: center !important;
     }
 
-    .hero-ctas .btn {
-        white-space: nowrap;
+    .hero-ctas .btn-primary {
+        min-height: 58px !important;
+        padding: 16px 27px !important;
+        font-size: 11px !important;
     }
 
     .hero-trust {
-        margin-top: 42px !important;
-        padding-top: 20px;
-        gap: 14px;
+        margin-top: 34px !important;
+        padding-top: 16px !important;
+        gap: 8px 14px !important;
+        font-size: 9px !important;
+        line-height: 1.25 !important;
     }
 
     .hero-trust span {
-        font-size: 10px !important;
+        gap: 5px !important;
+        white-space: nowrap !important;
     }
 
     .scroll-cue,
     .hero-pagination {
         display: none !important;
+    }
+}
+
+/* Very small phones: move the complete artwork slightly upward so
+   the product boxes remain behind the editorial content. */
+@media (max-width: 390px) {
+    .hero {
+        min-height: 735px !important;
+        height: 735px !important;
+    }
+
+    .hero-media {
+        background-position: center 31% !important;
+    }
+
+    .hero-copy {
+        padding-top: 182px !important;
+    }
+
+    .hero h1 {
+        font-size: clamp(55px, 16.5vw, 70px) !important;
+    }
+
+    .hero-copy > p {
+        max-width: 300px !important;
+        font-size: 18px !important;
+    }
+
+    .hero-trust {
+        gap: 7px 10px !important;
     }
 }
