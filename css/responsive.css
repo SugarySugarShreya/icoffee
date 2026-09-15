@@ -996,156 +996,66 @@
 
 
 /* =========================================================
-   ICOFFEE — MOBILE HERO FINAL FIX
-   Full product composition + text over image
-   Desktop/tablet hero remains unchanged.
+   iCOFFEE — MOBILE HERO IMAGE
+   Uses the dedicated portrait hero artwork
    ========================================================= */
 
 @media (max-width: 720px) {
-    .hero {
-        min-height: 760px !important;
-        height: 760px !important;
-        padding: 0 !important;
-        display: flex !important;
-        align-items: flex-start !important;
-        overflow: hidden !important;
-        background: #29160e !important;
-    }
 
-    /*
-       The source hero is 16:9. On a phone, 'cover' necessarily
-       crops one side. Instead, show the complete artwork at the
-       phone width and let the dark hero background continue above
-       and below it.
-    */
-    .hero-media {
-        position: absolute !important;
-        inset: 0 !important;
-        width: 100% !important;
-        height: 100% !important;
-        transform: none !important;
-        background-size: 100% auto !important;
-        background-position: center 34% !important;
-        background-repeat: no-repeat !important;
-        background-color: #29160e !important;
-        z-index: -3 !important;
-    }
-
-    .hero:hover .hero-media {
-        background-size: 100% auto !important;
-        filter: none !important;
-    }
-
-    /* Keep the image dark enough for the white editorial type. */
-    .hero-vignette {
-        position: absolute !important;
-        inset: 0 !important;
-        z-index: -2 !important;
-        pointer-events: none !important;
-        background:
-            linear-gradient(
-                180deg,
-                rgba(25, 12, 7, .28) 0%,
-                rgba(25, 12, 7, .08) 25%,
-                rgba(25, 12, 7, .10) 48%,
-                rgba(25, 12, 7, .48) 100%
-            ) !important;
-    }
-
-    .hero-copy {
-        position: relative !important;
-        z-index: 2 !important;
-        width: calc(100% - 48px) !important;
-        margin: 0 24px !important;
-        padding-top: 190px !important;
-    }
-
-    .eyebrow {
-        gap: 12px !important;
-        font-size: 10px !important;
-        letter-spacing: .22em !important;
-        white-space: nowrap !important;
-    }
-
-    .eyebrow i {
-        width: 54px !important;
-        flex: 0 0 54px !important;
-    }
-
-    .hero h1 {
-        margin-top: 14px !important;
-        font-size: clamp(58px, 16.8vw, 76px) !important;
-        line-height: .86 !important;
-        letter-spacing: -.045em !important;
-        max-width: 330px !important;
-        text-shadow: 0 2px 20px rgba(0,0,0,.12) !important;
-    }
-
-    .hero-copy > p {
-        margin-top: 20px !important;
-        max-width: 315px !important;
-        font-size: 19px !important;
-        line-height: 1.3 !important;
-        text-shadow: 0 2px 14px rgba(0,0,0,.18) !important;
-    }
-
-    .hero-ctas {
-        margin-top: 27px !important;
-        flex-direction: row !important;
-        align-items: center !important;
-    }
-
-    .hero-ctas .btn-primary {
-        min-height: 58px !important;
-        padding: 16px 27px !important;
-        font-size: 11px !important;
-    }
-
-    .hero-trust {
-        margin-top: 34px !important;
-        padding-top: 16px !important;
-        gap: 8px 14px !important;
-        font-size: 9px !important;
-        line-height: 1.25 !important;
-    }
-
-    .hero-trust span {
-        gap: 5px !important;
-        white-space: nowrap !important;
-    }
-
+    /* Hide the normal HTML hero content because
+       the mobile artwork already contains the text,
+       products and CTA. */
+    .hero-copy,
+    .hero-vignette,
     .scroll-cue,
     .hero-pagination {
         display: none !important;
     }
-}
 
-/* Very small phones: move the complete artwork slightly upward so
-   the product boxes remain behind the editorial content. */
-@media (max-width: 390px) {
+    /* Make the hero exactly the same aspect ratio
+       as icoffee-mobile-hero.png */
     .hero {
-        min-height: 735px !important;
-        height: 735px !important;
+        position: relative !important;
+        display: block !important;
+        width: 100% !important;
+        height: calc(100vw * 1.7758) !important;
+        min-height: 0 !important;
+        max-height: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: hidden !important;
+        background: #29160e !important;
     }
 
+    /* The actual mobile artwork */
     .hero-media {
-        background-position: center 31% !important;
+        position: absolute !important;
+        inset: 0 !important;
+
+        width: 100% !important;
+        height: 100% !important;
+
+        background-image:
+            url('../assets/images/hero/icoffee-mobile-hero.png') !important;
+
+        background-size: 100% 100% !important;
+        background-position: center center !important;
+        background-repeat: no-repeat !important;
+
+        transform: none !important;
+        filter: none !important;
+
+        z-index: 1 !important;
     }
 
-    .hero-copy {
-        padding-top: 182px !important;
+    .hero:hover .hero-media {
+        background-size: 100% 100% !important;
+        filter: none !important;
     }
 
-    .hero h1 {
-        font-size: clamp(55px, 16.5vw, 70px) !important;
-    }
-
-    .hero-copy > p {
-        max-width: 300px !important;
-        font-size: 18px !important;
-    }
-
-    .hero-trust {
-        gap: 7px 10px !important;
+    /* The artwork already contains all visual text,
+       product imagery and hero composition. */
+    .hero-media::after {
+        display: none !important;
     }
 }
