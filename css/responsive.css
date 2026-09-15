@@ -993,3 +993,84 @@
     }
 }
 
+
+/* =========================================================
+   HERO — MOBILE CROPPING FIX
+   Keep the full 16:9 hero artwork visible on phones while
+   retaining a cinematic background behind the content.
+   ========================================================= */
+
+@media (max-width: 720px) {
+    .hero {
+        min-height: 760px;
+        height: auto;
+        align-items: flex-end;
+        padding-bottom: 72px;
+        overflow: hidden;
+    }
+
+    /* Blurred/fill layer prevents empty bands while the
+       foreground layer below shows the complete artwork. */
+    .hero-media {
+        background-size: cover;
+        background-position: center center;
+        transform: none;
+        overflow: hidden;
+    }
+
+    .hero-media::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: url('../assets/images/hero/icoffee-hero.webp') center / contain no-repeat;
+        z-index: 1;
+    }
+
+    .hero-media::after {
+        content: "";
+        position: absolute;
+        inset: -24px;
+        background: url('../assets/images/hero/icoffee-hero.webp') center / cover no-repeat;
+        filter: blur(18px);
+        opacity: .55;
+        transform: scale(1.05);
+        z-index: 0;
+    }
+
+    .hero-vignette {
+        z-index: -2;
+    }
+
+    .hero-copy {
+        position: relative;
+        z-index: 2;
+        width: auto;
+        margin: 0 24px;
+        padding-top: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        min-height: 720px;
+        padding-bottom: 58px;
+    }
+
+    .hero-copy {
+        margin: 0 20px;
+        padding-top: 260px;
+    }
+
+    .hero h1 {
+        font-size: clamp(52px, 16vw, 74px);
+    }
+
+    .hero-copy > p {
+        font-size: 18px;
+        max-width: 360px;
+    }
+
+    .hero-ctas {
+        margin-top: 24px;
+    }
+}
