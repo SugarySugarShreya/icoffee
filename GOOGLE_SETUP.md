@@ -1,7 +1,7 @@
 # iCoffee Google launch setup
 
 ## 1) Google Analytics 4
-1. Create a GA4 web data stream for `https://icoffeeindusviva.com/`.
+1. Create a GA4 web data stream for `https://www.icoffeex.com/`.
 2. Copy the Measurement ID (`G-XXXXXXXXXX`).
 3. Open `js/analytics.js` and replace the placeholder `G-XXXXXXXXXX` with the real ID.
 4. Upload the updated file and test Realtime in GA4.
@@ -14,10 +14,10 @@ Tracked actions:
 ## 2) Google Search Console
 Recommended verification: Domain property.
 1. Open Google Search Console.
-2. Add property: `icoffeeindusviva.com`.
+2. Add property: `www.icoffeex.com`.
 3. Choose DNS verification and add Google's TXT record at your domain DNS provider.
 4. After verification, submit:
-   `https://icoffeeindusviva.com/sitemap.xml`
+   `https://www.icoffeex.com/sitemap.xml`
 
 HTML fallback placeholder is present in `index.html`:
 `<meta name="google-site-verification" content="PASTE_GOOGLE_SEARCH_CONSOLE_CODE_HERE">`
@@ -49,8 +49,5 @@ Confirm the events above appear.
 
 ## 5) SEO landing-page architecture
 The project includes dedicated, indexable landing pages:
-- `/pages/functional-coffee.html` — functional coffee / botanical coffee discovery intent
-- `/pages/botanical-coffee.html` — botanical ingredients and research-aware intent
-- `/pages/coffee-ritual.html` — coffee ritual / preparation / everyday-use intent
 
 These pages should link naturally to the two product pages, Ingredients, Science, How to Use and the official store. Avoid keyword stuffing and keep all product/health claims aligned with approved packaging and substantiated evidence.

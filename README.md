@@ -1,41 +1,67 @@
-# iCoffee / IndusViva Static Site
+# iCoffee by IndusViva — www.icoffeex.com
 
-Plain HTML + CSS + JavaScript version using the requested structure.
+Static site: plain HTML, CSS and JavaScript. No build step, no dependencies.
 
-## Run locally
-Open `index.html` in a browser. For best results use a local server (VS Code Live Server is ideal).
+## Pages that exist
 
-## Structure
-- `index.html` homepage
-- `pages/` secondary pages
-- `assets/images/hero/` approved hero image
-- `assets/images/products/` original product assets
-- `assets/images/lifestyle/` ingredient/lifestyle assets
-- `css/` styles
-- `js/` interactions and animations
-- `robots.txt`, `sitemap.xml`, `llms.txt` for crawl/discovery support
+| Path | Purpose |
+|---|---|
+| `index.html` | Homepage |
+| `pages/icoffee-black.html` | iCoffee Black product page |
+| `pages/icoffee-creamer.html` | iCoffee Creamer product page |
+| `pages/medical-disclaimer.html` | Medical disclaimer |
+| `404.html` | Not-found page |
 
-## Production
-The production domain is `https://icoffeeindusviva.com/` in `index.html`, `robots.txt`, `sitemap.xml`, `llms.txt`, and page canonicals/structured data. Replace placeholder copy with final approved brand/legal copy.
+Ten empty (0-byte) journal files under `pages/journal/` were removed, along with
+the 22 URLs in `sitemap.xml` that pointed at pages which were never built.
+If journal content is written later, add the files **and** the sitemap entries together.
 
+## Deploying
 
-## AEO
-Added answer-first content, crawlable FAQ sections, FAQPage structured data on core informational pages, and optional SpeakableSpecification signals. AEO improves machine readability and answer extraction; it does not guarantee inclusion or ranking in any AI/search answer engine.
+The site is a folder of static files — upload the whole directory as-is.
 
+**GitHub Pages / Netlify / Cloudflare Pages:** `CNAME` already contains
+`www.icoffeex.com`. Point the DNS record for `www` at your host, and set an apex
+redirect so `icoffeex.com` → `https://www.icoffeex.com` (every canonical URL,
+Open Graph tag and structured-data ID uses the `www` form).
 
-## Google launch readiness
-- GA4-ready event tracking is in `js/analytics.js`; replace `G-XXXXXXXXXX` with the real Measurement ID.
-- Search Console HTML verification placeholder is in `index.html`; DNS TXT verification is documented in `GOOGLE_SETUP.md`.
-- Conversion events: `select_item` for Black/Creamer CTAs, `store_click` for official-store links, and `view_item` on product pages.
-- SEO landing pages: `pages/functional-coffee.html`, `pages/botanical-coffee.html`, `pages/coffee-ritual.html`.
-- Full launch/indexing checklist: see `GOOGLE_SETUP.md`.
+Serve over HTTPS. Nothing else is required.
 
+## Before you go live
 
-## Growth layer added
-- GA4 conversion tracking
-- Search Console launch instructions
-- Authority/brand reference page
-- 10 educational journal landing pages
-- Genuine-review intake page
-- Conversion-focused CTA instrumentation
-- Growth playbook for authority, content, reviews and CRO
+1. **GA4** — `js/analytics.js` still contains `G-XXXXXXXXXX`. The script is
+   guarded, so it does nothing at all until a real Measurement ID is pasted in.
+   Tracked events: `view_item`, `select_item`, `store_click`.
+2. **Search Console** — verify by DNS TXT record (see `GOOGLE_SETUP.md`). The
+   empty HTML verification meta tag was removed rather than shipped as a
+   placeholder; add one back only if you prefer file/meta verification.
+3. **Store link** — every "Shop" button points at the IndusViva store URL. It is
+   hard-coded in the HTML *and* in `js/store-link.js`. To change it everywhere,
+   edit `ICOFFEE_STORE_URL` in that file.
+4. **Claims review** — the product pages, the FAQ structured data and the brand
+   film make therapeutic statements ("formulated for serious blood sugar
+   support", "helps regulate blood sugar", "supports insulin sensitivity", plus
+   FAQ answers about diabetes and pregnancy). Under FSSAI rules a food product
+   generally cannot carry disease-management claims. Have this reviewed before
+   launch — it is the one outstanding item that is not a code problem.
+
+## Mobile
+
+- `css/mobile.css` loads last on every page and holds the mobile layer:
+  tap-target sizing, overflow guards, `svh` units, safe-area insets, touch-hover
+  neutralisation and reduced-motion support.
+- The mobile hero (`css/responsive.css`, bottom of file) uses the portrait
+  artwork with the headline, tagline and CTA overlaid. Do **not** use
+  `image-set()` for that background — Chromium parses it but will not paint it,
+  which blanks the hero.
+- `js/mobile.js` adds the sticky shop bar, menu keyboard/outside-close
+  behaviour, and defers the brand film on phones and slow connections.
+
+## Asset notes
+
+- Mobile hero: served as `icoffee-mobile-hero.webp` (134 KB). The 1.8 MB PNG is
+  kept alongside it as the design source.
+- Brand film: re-encoded from 5.5 MB to 615 KB (audio removed — it plays muted).
+  `icoffee-story-poster.webp` is its poster frame.
+- Roughly 40 MB of `assets/` is unreferenced — mostly PNG duplicates of WebPs
+  already in use. Harmless to keep; safe to delete if you want a leaner repo.
