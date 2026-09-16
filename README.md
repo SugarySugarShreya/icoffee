@@ -1,4 +1,4 @@
-# iCoffee by IndusViva — www.icoffeex.com
+# iCoffee — www.icoffeex.com
 
 Static site: plain HTML, CSS and JavaScript. No build step, no dependencies.
 
