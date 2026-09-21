@@ -65,3 +65,7 @@ Serve over HTTPS. Nothing else is required.
   `icoffee-story-poster.webp` is its poster frame.
 - Roughly 40 MB of `assets/` is unreferenced — mostly PNG duplicates of WebPs
   already in use. Harmless to keep; safe to delete if you want a leaner repo.
+
+
+## Regulatory note
+The site now displays the publicly found IndusViva FSSAI licence number 11224998000012 as a reference. The publicly available licence document found during this update shows validity through 09-12-2025, so the current licence should be verified before production publication.

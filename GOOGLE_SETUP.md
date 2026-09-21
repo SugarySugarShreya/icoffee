@@ -14,7 +14,7 @@ Tracked actions:
 ## 2) Google Search Console
 Recommended verification: Domain property.
 1. Open Google Search Console.
-2. Add property: `www.icoffeex.com`.
+2. Add property: `icoffeex.com` (Domain property, covers the `www` host too).
 3. Choose DNS verification and add Google's TXT record at your domain DNS provider.
 4. After verification, submit:
    `https://www.icoffeex.com/sitemap.xml`
@@ -34,7 +34,7 @@ Confirm the events above appear.
 ## 4) Indexing checklist
 - [ ] Domain resolves on HTTPS.
 - [ ] HTTP redirects to HTTPS.
-- [ ] One canonical host is selected (non-www in this project).
+- [ ] One canonical host is selected: `https://www.icoffeex.com` (apex `icoffeex.com` redirects to it).
 - [ ] `robots.txt` is reachable.
 - [ ] `sitemap.xml` is reachable and contains canonical URLs only.
 - [ ] Search Console domain property is verified.

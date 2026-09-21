@@ -1,8 +1,8 @@
 # iCoffee growth launch playbook
 
 ## Search Console
-- Verify `icoffeeindusviva.com` as a Domain property using DNS TXT.
-- Submit `https://icoffeeindusviva.com/sitemap.xml`.
+- Verify `icoffeex.com` as a Domain property using DNS TXT (this covers the `www` host too).
+- Submit `https://www.icoffeex.com/sitemap.xml`.
 - Request indexing for the homepage, Black, Creamer, Ingredients, Science and Authority pages.
 - Review Page Indexing, Core Web Vitals and Search performance weekly.
 
