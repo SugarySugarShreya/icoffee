@@ -12,14 +12,22 @@
   window.addEventListener('scroll', onScroll, {passive:true});
   onScroll();
 
+  const setMenuState = (open) => {
+    menu?.classList.toggle('open', open);
+    document.body.classList.toggle('menu-open', open);
+    if (toggle) {
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      toggle.textContent = open ? '×' : '☰';
+    }
+  };
+
   toggle?.addEventListener('click', () => {
-    menu?.classList.toggle('open');
-    document.body.classList.toggle('menu-open', menu?.classList.contains('open'));
+    setMenuState(!menu?.classList.contains('open'));
   });
 
   menu?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-    menu.classList.remove('open');
-    document.body.classList.remove('menu-open');
+    setMenuState(false);
   }));
 
   searchToggle?.addEventListener('click', () => {

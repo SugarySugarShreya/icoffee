@@ -1325,13 +1325,13 @@ h2 em {
     overflow: hidden;
 }
 
-/* decorative crema */
+/* decorative crema — FIX: capped with min() so it never escapes overflow:hidden parent */
 .icoffee-showcase::before {
     content: "";
     position: absolute;
 
-    width: 900px;
-    height: 900px;
+    width: min(900px, 120vw);
+    height: min(900px, 120vw);
 
     right: -360px;
     top: 70px;
@@ -1470,11 +1470,12 @@ h2 em {
     min-height: 540px;
 }
 
+/* FIX: capped so orb scales with viewport on mobile */
 .product-glow {
     position: absolute;
 
-    width: 430px;
-    height: 430px;
+    width: min(430px, 80vw);
+    height: min(430px, 80vw);
 
     border-radius: 50%;
 
@@ -4250,9 +4251,14 @@ h2 em {
         font-size: 34px;
     }
 
+    /* FIX: Constrain wrapper to viewport so it never itself causes horizontal scroll.
+       The inner table scrolls within this container. */
     .compare-table-wrap {
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
+        max-width: 100%;
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .compare-table {

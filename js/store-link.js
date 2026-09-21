@@ -1,12 +1,10 @@
 /* =========================================================
    STORE LINK — SINGLE SOURCE OF TRUTH
-   Replace the URL below with the client's real store /
-   checkout link once it is provided. Every "SHOP NOW" button
-   across the entire site (any element with [data-store-link])
-   updates automatically from this one place — no need to
-   edit each page by hand.
+   Every element with [data-store-link] across the entire site
+   gets its href updated automatically from this one place.
+   To change the store URL, edit ICOFFEE_STORE_URL below only.
 ========================================================= */
-var ICOFFEE_STORE_URL = "https://store.indusviva.com/?id=1136006&token=MTEzNjAwNi8xNzExMDM0Nzg="; // TODO: replace with client's official store link
+var ICOFFEE_STORE_URL = "https://store.indusviva.com/?id=1136006&token=MTEzNjAwNi8xNzExMDM0Nzg=";
 
 document.addEventListener('DOMContentLoaded', function () {
     var links = document.querySelectorAll('[data-store-link]');
