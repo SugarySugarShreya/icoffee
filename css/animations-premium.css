@@ -1,0 +1,55 @@
+/* iCOFFEE premium motion layer — subtle, fast, accessible */
+:root{--motion-fast:.22s;--motion-med:.55s;--motion-slow:.9s}
+html{scroll-behavior:smooth}
+body{animation:pageEnter .7s ease both}
+@keyframes pageEnter{from{opacity:0}to{opacity:1}}
+
+/* Reveal-on-scroll */
+.reveal,.motion-reveal{opacity:0;transform:translateY(28px);transition:opacity var(--motion-med) cubic-bezier(.22,1,.36,1),transform var(--motion-med) cubic-bezier(.22,1,.36,1)}
+.reveal.visible,.motion-reveal.is-visible{opacity:1;transform:none}
+
+/* Staggered grids */
+.iv-product-grid > *, .ingredient-grid > *, .hub-grid > *, .hub-stat-grid > *, .shop-products > *, .faq-list > details{transition-delay:var(--motion-delay,0ms)}
+.motion-stagger > *{opacity:0;transform:translateY(24px);transition:opacity .65s cubic-bezier(.22,1,.36,1),transform .65s cubic-bezier(.22,1,.36,1);transition-delay:var(--delay,0ms)}
+.motion-stagger.is-visible > *{opacity:1;transform:none}
+
+/* Premium image movement */
+.hero-media img,.hero-media video,.iv-product-image,.hub-card img,.ingredient-panel img,.shop-product img,.banner-parallax{transition:transform 1s cubic-bezier(.22,1,.36,1),filter .7s ease}
+.hero-media:hover img,.hero-media:hover video,.iv-product-card:hover .iv-product-image,.hub-card:hover img,.ingredient-panel:hover img,.shop-product:hover img{transform:scale(1.035)}
+
+/* Cards */
+.iv-product-card,.hub-card,.ingredient-panel,.benefit,.shop-product,.faq-list details{transition:transform .45s cubic-bezier(.22,1,.36,1),box-shadow .45s ease,border-color .35s ease}
+.iv-product-card:hover,.hub-card:hover,.shop-product:hover{transform:translateY(-7px)}
+.ingredient-panel:hover,.benefit:hover{transform:translateY(-4px)}
+
+/* Buttons */
+.btn,.iv-product-button,.hero-ctas a{position:relative;overflow:hidden;transition:transform .25s ease,box-shadow .3s ease,background-color .3s ease}
+.btn::after,.iv-product-button::after,.hero-ctas a::after{content:"";position:absolute;inset:0;transform:translateX(-110%);background:linear-gradient(100deg,transparent,rgba(255,255,255,.18),transparent);transition:transform .65s ease}
+.btn:hover,.iv-product-button:hover,.hero-ctas a:hover{transform:translateY(-2px)}
+.btn:hover::after,.iv-product-button:hover::after,.hero-ctas a:hover::after{transform:translateX(110%)}
+
+/* Header */
+.header-stack{transition:transform .35s ease,box-shadow .35s ease}
+.header-stack.is-scrolled{box-shadow:0 8px 28px rgba(41,22,14,.12)}
+.nav-links a{transition:opacity .25s ease,transform .25s ease}
+.nav-links a:hover{transform:translateY(-1px)}
+
+/* Decorative floating product glow */
+.iv-product-glow{animation:softFloat 5s ease-in-out infinite}
+@keyframes softFloat{0%,100%{transform:translate3d(0,0,0)}50%{transform:translate3d(0,-8px,0)}}
+
+/* Scroll progress */
+.motion-progress{position:fixed;top:0;left:0;width:100%;height:2px;z-index:9999;transform-origin:left center;transform:scaleX(0);background:currentColor;pointer-events:none}
+
+/* FAQ disclosure */
+.faq-list details summary{transition:padding .3s ease}
+.faq-list details[open] summary{padding-bottom:10px}
+
+@media (prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ body{animation:none}
+ .reveal,.motion-reveal,.motion-stagger > *{opacity:1;transform:none;transition:none}
+ .iv-product-glow{animation:none}
+ .hero-media img,.hero-media video,.iv-product-image,.hub-card img,.ingredient-panel img,.shop-product img{transition:none}
+ .btn::after,.iv-product-button::after,.hero-ctas a::after{display:none}
+}
