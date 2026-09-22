@@ -62,7 +62,7 @@ body.disclaimer-lock {
 
 .disclaimer-eyebrow {
     display: block;
-    font-size: 15px;
+    font-size: 13px;
     letter-spacing: .24em;
     font-weight: 700;
     color: var(--caramel);
@@ -72,14 +72,14 @@ body.disclaimer-lock {
 
 .disclaimer-card h2 {
     font-family: var(--serif);
-    font-size: clamp(35px, 4vw, 45px);
+    font-size: clamp(33px, 4vw, 43px);
     font-weight: 500;
     line-height: 1.05;
     margin: 0 0 20px;
 }
 
 .disclaimer-body {
-    font-size: 18.5px;
+    font-size: 16.5px;
     line-height: 1.75;
     opacity: .78;
     max-height: 260px;
@@ -96,7 +96,7 @@ body.disclaimer-lock {
     display: flex;
     align-items: flex-start;
     gap: 12px;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.5;
     cursor: pointer;
     margin-bottom: 22px;
@@ -116,7 +116,7 @@ body.disclaimer-lock {
     cursor: pointer;
     padding: 17px 25px;
     border-radius: 999px;
-    font-size: 16px;
+    font-size: 14px;
     letter-spacing: .12em;
     font-weight: 800;
     text-transform: uppercase;
@@ -141,7 +141,7 @@ body.disclaimer-lock {
 
     .disclaimer-body {
         max-height: 42vh;
-        font-size: 18px;
+        font-size: 16px;
     }
 }
 
@@ -157,7 +157,7 @@ body.disclaimer-lock {
     border-radius: 999px;
     background: linear-gradient(120deg, var(--gold), var(--caramel));
     color: #2b160c;
-    font-size: 17px;
+    font-size: 15px;
     font-weight: 800;
     letter-spacing: .1em;
     text-transform: uppercase;
@@ -242,7 +242,7 @@ a[data-store-link]:hover {
 }
 
 .quick-facts li {
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.5;
     opacity: .82;
 }
@@ -250,7 +250,7 @@ a[data-store-link]:hover {
 .quick-facts li strong {
     display: block;
     font-family: var(--serif);
-    font-size: 23px;
+    font-size: 21px;
     font-weight: 500;
     opacity: 1;
     margin-bottom: 2px;
@@ -296,7 +296,7 @@ a[data-store-link]:hover {
 }
 
 .gallery-strip-grid figcaption {
-    font-size: 16px;
+    font-size: 14px;
     letter-spacing: .06em;
     text-align: center;
     opacity: .68;
@@ -315,14 +315,14 @@ a[data-store-link]:hover {
 
 .composition-heading h2 {
     font-family: var(--serif);
-    font-size: clamp(39px, 4vw, 57px);
+    font-size: clamp(37px, 4vw, 55px);
     font-weight: 500;
 }
 
 .composition-heading p {
     margin-top: 16px;
     opacity: .72;
-    font-size: 20px;
+    font-size: 18px;
     line-height: 1.6;
 }
 
@@ -351,14 +351,14 @@ a[data-store-link]:hover {
 
 .ingredient-mini-card h3 {
     font-family: var(--serif);
-    font-size: 27px;
+    font-size: 25px;
     font-weight: 500;
     margin: 0 0 4px;
 }
 
 .ingredient-mini-card span {
     display: block;
-    font-size: 16px;
+    font-size: 14px;
     letter-spacing: .08em;
     color: var(--caramel);
     margin-bottom: 12px;
@@ -366,7 +366,7 @@ a[data-store-link]:hover {
 }
 
 .ingredient-mini-card p {
-    font-size: 18.5px;
+    font-size: 16.5px;
     line-height: 1.65;
     opacity: .74;
 }
@@ -386,7 +386,7 @@ a[data-store-link]:hover {
     caption-side: top;
     text-align: left;
     padding: 20px 26px 0;
-    font-size: 15px;
+    font-size: 13px;
     letter-spacing: .18em;
     text-transform: uppercase;
     opacity: .55;
@@ -396,7 +396,7 @@ a[data-store-link]:hover {
 .composition-table-simple td {
     padding: 16px 26px;
     text-align: left;
-    font-size: 19px;
+    font-size: 17px;
     border-top: 1px solid rgba(42, 23, 15, .12);
 }
 
@@ -424,13 +424,13 @@ a[data-store-link]:hover {
 
 .who-its-for-card h3 {
     font-family: var(--serif);
-    font-size: 31px;
+    font-size: 29px;
     font-weight: 500;
     margin: 0 0 16px;
 }
 
 .who-its-for-card p {
-    font-size: 19.5px;
+    font-size: 17.5px;
     line-height: 1.75;
     opacity: .82;
     margin: 0 0 12px;
@@ -452,7 +452,7 @@ a[data-store-link]:hover {
 
 .directions-heading h2 {
     font-family: var(--serif);
-    font-size: clamp(39px, 4vw, 57px);
+    font-size: clamp(37px, 4vw, 55px);
     font-weight: 500;
 }
 
@@ -475,14 +475,14 @@ a[data-store-link]:hover {
 .directions-steps span {
     display: block;
     font-family: var(--serif);
-    font-size: 18px;
+    font-size: 16px;
     color: var(--caramel);
     letter-spacing: .1em;
     margin-bottom: 12px;
 }
 
 .directions-steps p {
-    font-size: 19px;
+    font-size: 17px;
     line-height: 1.65;
     opacity: .78;
     margin: 0;
@@ -495,7 +495,7 @@ a[data-store-link]:hover {
     border-radius: 16px;
     background: rgba(184, 121, 63, .12);
     border: 1px solid rgba(184, 121, 63, .3);
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.7;
     opacity: .88;
 }
@@ -553,7 +553,7 @@ a[data-store-link]:hover {
 .product-spec-table td {
     padding: 17px 20px;
     border-bottom: 1px solid rgba(42,23,15,.11);
-    font-size: 22px;
+    font-size: 20px;
     line-height: 1.45;
     vertical-align: middle;
 }
@@ -580,7 +580,7 @@ a[data-store-link]:hover {
 .gallery-strip-heading h2 {
     margin-top: 10px;
     font-family: var(--serif);
-    font-size: clamp(37px,4vw,53px);
+    font-size: clamp(35px, 4vw, 51px);
     font-weight: 500;
 }
 .gallery-strip-grid {
@@ -596,7 +596,7 @@ a[data-store-link]:hover {
     .product-spec-table th,
     .product-spec-table td {
         padding: 14px 15px;
-        font-size: 20px;
+        font-size: 18px;
     }
     .gallery-strip-grid { grid-template-columns: repeat(2, 1fr); }
 }

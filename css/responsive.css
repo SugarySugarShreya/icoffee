@@ -109,7 +109,7 @@
     }
 
     .iv-why-heading h2 {
-        font-size: clamp(45px, 6vw, 65px);
+        font-size: clamp(43px, 6vw, 63px);
     }
 
     .iv-why-item {
@@ -137,7 +137,7 @@
 
     .announcement {
         padding: 0 18px;
-        font-size: 14px;
+        font-size: 12px;
     }
 
 
@@ -159,11 +159,11 @@
     }
 
     .brand-indus {
-        font-size: 15px;
+        font-size: 13px;
     }
 
     .brand-icoffee {
-        font-size: 28px;
+        font-size: 26px;
     }
 
     .account-btn span {
@@ -187,11 +187,11 @@
     }
 
     .hero h1 {
-        font-size: clamp(60px, 17vw, 91px);
+        font-size: clamp(58px, 17vw, 89px);
     }
 
     .hero-copy > p {
-        font-size: 26px;
+        font-size: 24px;
     }
 
     .hero-ctas {
@@ -204,7 +204,7 @@
     }
 
     .hero-trust span {
-        font-size: 15px;
+        font-size: 13px;
     }
 
     .scroll-cue {
@@ -241,7 +241,7 @@
     }
 
     .product-meta h3 {
-        font-size: 36px;
+        font-size: 34px;
     }
 
 
@@ -276,7 +276,7 @@
     }
 
     .benefit h3 {
-        font-size: 35px;
+        font-size: 33px;
         margin-top: 30px;
     }
 
@@ -394,7 +394,7 @@
     }
 
     .iv-why-heading h2 {
-        font-size: clamp(43px, 10vw, 57px);
+        font-size: clamp(41px, 10vw, 55px);
         line-height: 1;
     }
 
@@ -418,12 +418,12 @@
     }
 
     .iv-why-item h3 {
-        font-size: 30px;
+        font-size: 28px;
     }
 
     .iv-why-item p {
         max-width: 100%;
-        font-size: 19px;
+        font-size: 17px;
     }
 
 
@@ -465,7 +465,7 @@
     }
 
     .iv-section-label {
-        font-size: 14px;
+        font-size: 12px;
         gap: 10px;
     }
 
@@ -474,7 +474,7 @@
     }
 
     .iv-why-heading h2 {
-        font-size: 41px;
+        font-size: 39px;
     }
 
 
@@ -491,11 +491,11 @@
     }
 
     .iv-why-item h3 {
-        font-size: 28px;
+        font-size: 26px;
     }
 
     .iv-why-item p {
-        font-size: 18px;
+        font-size: 16px;
         line-height: 1.65;
     }
 
@@ -531,7 +531,7 @@
     }
 
     .iv-video-bottom h3 {
-        font-size: 36px;
+        font-size: 34px;
     }
 
 }
@@ -609,7 +609,7 @@
 
 .iv-why-item p {
     max-width: 360px;
-    font-size: 18.5px;
+    font-size: 16.5px;
     line-height: 1.6;
 }
 
@@ -698,7 +698,7 @@
     }
 
     .iv-why-item h3 {
-        font-size: 29px;
+        font-size: 27px;
     }
 
     .iv-small-line {
@@ -707,7 +707,7 @@
 
     .iv-why-item p {
         max-width: none;
-        font-size: 18.5px;
+        font-size: 16.5px;
         line-height: 1.6;
     }
 
@@ -740,11 +740,11 @@
     }
 
     .iv-why-item h3 {
-        font-size: 27px;
+        font-size: 25px;
     }
 
     .iv-why-item p {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .iv-why-video {
@@ -765,7 +765,7 @@
     }
 
     .iv-video-bottom h3 {
-        font-size: 34px;
+        font-size: 32px;
     }
 }
 
@@ -823,7 +823,7 @@
 
     .iv-why-column .iv-why-item p {
         max-width: 360px;
-        font-size: 18.5px;
+        font-size: 16.5px;
         line-height: 1.6;
     }
 
@@ -884,7 +884,7 @@
     }
 
     .iv-why-column .iv-why-item p {
-        font-size: 18px;
+        font-size: 16px;
         line-height: 1.55;
     }
 
@@ -986,7 +986,7 @@
     }
 
     .iv-why-heading h2 {
-        font-size: 41px;
+        font-size: 39px;
     }
 
     .iv-why-column .iv-why-item {
@@ -1060,20 +1060,20 @@
     }
 
     .hero-copy .eyebrow {
-        font-size: clamp(13px, 2vw, 17px) !important;
+        font-size: clamp(11px, 2vw, 15px) !important;
         letter-spacing: .16em !important;
         margin-bottom: 12px !important;
     }
 
     .hero h1 {
-        font-size: clamp(47px, 11.5vw, 77px) !important;
+        font-size: clamp(45px, 11.5vw, 75px) !important;
         line-height: .92 !important;
         margin: 0 0 14px !important;
     }
 
     .hero-copy > p {
         max-width: 320px !important;
-        font-size: clamp(18px, 3.2vw, 23px) !important;
+        font-size: clamp(16px, 3.2vw, 21px) !important;
         line-height: 1.35 !important;
         margin: 0 0 18px !important;
     }
@@ -1088,7 +1088,7 @@
     .hero-ctas .btn {
         min-height: 44px !important;
         padding: 12px 18px !important;
-        font-size: 16px !important;
+        font-size: 14px !important;
         white-space: nowrap !important;
     }
 
@@ -1126,12 +1126,12 @@
     }
 
     .brand-indus {
-        font-size: 15px !important;
+        font-size: 13px !important;
         letter-spacing: .06em !important;
     }
 
     .brand-icoffee {
-        font-size: 21px !important;
+        font-size: 19px !important;
     }
 
     .brand-divider {
@@ -1145,7 +1145,7 @@
 
     .shop-nav-btn {
         padding: 9px 10px !important;
-        font-size: 14px !important;
+        font-size: 12px !important;
     }
 
     .mobile-toggle {
@@ -1163,16 +1163,16 @@
     }
 
     .hero h1 {
-        font-size: clamp(43px, 12vw, 53px) !important;
+        font-size: clamp(41px, 12vw, 51px) !important;
     }
 
     .hero-copy > p {
-        font-size: 17px !important;
+        font-size: 15px !important;
     }
 
     .hero-ctas .btn {
         padding: 10px 13px !important;
-        font-size: 14px !important;
+        font-size: 12px !important;
     }
 }
 
@@ -1210,7 +1210,7 @@
         align-items: center !important;
         min-height: 44px !important;
         padding: 8px 0 !important;
-        font-size: 18px !important;
+        font-size: 16px !important;
     }
 
     .nav-actions {
@@ -1225,7 +1225,7 @@
         display: inline-flex !important;
         align-items: center !important;
         justify-content: center !important;
-        font-size: 25px !important;
+        font-size: 23px !important;
     }
 
     /* Improve logo/menu contrast over light hero imagery. */
@@ -1283,14 +1283,14 @@
     }
 
     .banner-accessible-copy span {
-        font-size: 14px;
+        font-size: 12px;
         letter-spacing: .18em;
         font-weight: 700;
     }
 
     .banner-accessible-copy strong {
         font-family: var(--serif);
-        font-size: clamp(35px, 8vw, 57px);
+        font-size: clamp(33px, 8vw, 55px);
         font-weight: 500;
         line-height: 1;
     }
@@ -1325,7 +1325,7 @@
     }
 
     .brand-icoffee {
-        font-size: 22px !important;
+        font-size: 20px !important;
     }
 
     .shop-nav-btn {
@@ -1345,24 +1345,24 @@
         min-height: 44px !important;
         min-width: 150px;
         padding: 10px 16px !important;
-        font-size: 15px !important;
+        font-size: 13px !important;
         letter-spacing: .11em !important;
     }
 
-    .iv-product-button span { font-size: 19px !important; }
+    .iv-product-button span { font-size: 17px !important; }
 
     /* Avoid ultra-small utility labels on phones. */
     .iv-product-eyebrow,
     .page-eyebrow,
     .product-showcase-label,
     .banner-accessible-copy span {
-        font-size: 15px !important;
+        font-size: 13px !important;
     }
 
     .shop-nav-btn {
         min-height: 44px !important;
         padding: 10px 14px !important;
-        font-size: 15px !important;
+        font-size: 13px !important;
     }
 
     .footer-links a,
@@ -1413,19 +1413,19 @@
     }
 
     .immersive-copy h2 {
-        font-size: clamp(55px, 14vw, 81px) !important;
+        font-size: clamp(53px, 14vw, 79px) !important;
     }
 
     .immersive-copy p {
         max-width: 330px;
-        font-size: 22px;
+        font-size: 20px;
     }
 }
 
 @media (max-width: 360px) {
     .nav { padding-left: 10px !important; padding-right: 10px !important; }
     .brand { gap: 6px !important; }
-    .brand-icoffee { font-size: 23px !important; }
+    .brand-icoffee { font-size: 21px !important; }
     .nav-actions { gap: 4px !important; }
     .shop-nav-btn { padding-left: 11px !important; padding-right: 11px !important; }
     .mobile-toggle { width: 44px !important; min-width: 44px !important; }
