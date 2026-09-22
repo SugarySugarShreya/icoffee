@@ -62,7 +62,7 @@ body.disclaimer-lock {
 
 .disclaimer-eyebrow {
     display: block;
-    font-size: 10px;
+    font-size: 15px;
     letter-spacing: .24em;
     font-weight: 700;
     color: var(--caramel);
@@ -72,14 +72,14 @@ body.disclaimer-lock {
 
 .disclaimer-card h2 {
     font-family: var(--serif);
-    font-size: clamp(30px, 4vw, 40px);
+    font-size: clamp(35px, 4vw, 45px);
     font-weight: 500;
     line-height: 1.05;
     margin: 0 0 20px;
 }
 
 .disclaimer-body {
-    font-size: 13.5px;
+    font-size: 18.5px;
     line-height: 1.75;
     opacity: .78;
     max-height: 260px;
@@ -96,7 +96,7 @@ body.disclaimer-lock {
     display: flex;
     align-items: flex-start;
     gap: 12px;
-    font-size: 13px;
+    font-size: 18px;
     line-height: 1.5;
     cursor: pointer;
     margin-bottom: 22px;
@@ -116,7 +116,7 @@ body.disclaimer-lock {
     cursor: pointer;
     padding: 17px 25px;
     border-radius: 999px;
-    font-size: 11px;
+    font-size: 16px;
     letter-spacing: .12em;
     font-weight: 800;
     text-transform: uppercase;
@@ -141,7 +141,7 @@ body.disclaimer-lock {
 
     .disclaimer-body {
         max-height: 42vh;
-        font-size: 13px;
+        font-size: 18px;
     }
 }
 
@@ -153,13 +153,13 @@ body.disclaimer-lock {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: 11px 22px;
+    padding: 15px 30px;
     border-radius: 999px;
     background: linear-gradient(120deg, var(--gold), var(--caramel));
     color: #2b160c;
-    font-size: 10px;
+    font-size: 17px;
     font-weight: 800;
-    letter-spacing: .12em;
+    letter-spacing: .1em;
     text-transform: uppercase;
     white-space: nowrap;
     transition: transform .25s ease, box-shadow .25s ease;
@@ -172,6 +172,58 @@ body.disclaimer-lock {
 
 .inner-page .shop-nav-btn {
     color: #2b160c;
+}
+
+/* =========================================================
+   SHOP / BUY CTA — FLASH + EYE-CATCHING ANIMATION
+   Applies to every button linked to the store (Shop Now,
+   Buy Now, SHOP icoffee..., sticky CTA, footer store link)
+========================================================= */
+
+@keyframes ctaFlashPulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(242, 199, 126, .65), 0 10px 24px rgba(184, 121, 63, .28);
+        transform: scale(1);
+    }
+    50% {
+        box-shadow: 0 0 0 14px rgba(242, 199, 126, 0), 0 14px 30px rgba(184, 121, 63, .4);
+        transform: scale(1.035);
+    }
+}
+
+@keyframes ctaShine {
+    0% { left: -60%; }
+    100% { left: 130%; }
+}
+
+a[data-store-link] {
+    position: relative;
+    overflow: hidden;
+    animation: ctaFlashPulse 2.2s ease-in-out infinite;
+}
+
+a[data-store-link]::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -60%;
+    width: 45%;
+    height: 100%;
+    background: linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.55) 50%, rgba(255,255,255,0) 100%);
+    transform: skewX(-20deg);
+    animation: ctaShine 2.6s ease-in-out infinite;
+    pointer-events: none;
+}
+
+a[data-store-link]:hover {
+    animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    a[data-store-link],
+    a[data-store-link]::after {
+        animation: none;
+    }
 }
 
 /* =========================================================
@@ -190,7 +242,7 @@ body.disclaimer-lock {
 }
 
 .quick-facts li {
-    font-size: 13px;
+    font-size: 18px;
     line-height: 1.5;
     opacity: .82;
 }
@@ -198,7 +250,7 @@ body.disclaimer-lock {
 .quick-facts li strong {
     display: block;
     font-family: var(--serif);
-    font-size: 18px;
+    font-size: 23px;
     font-weight: 500;
     opacity: 1;
     margin-bottom: 2px;
@@ -244,7 +296,7 @@ body.disclaimer-lock {
 }
 
 .gallery-strip-grid figcaption {
-    font-size: 11px;
+    font-size: 16px;
     letter-spacing: .06em;
     text-align: center;
     opacity: .68;
@@ -263,14 +315,14 @@ body.disclaimer-lock {
 
 .composition-heading h2 {
     font-family: var(--serif);
-    font-size: clamp(34px, 4vw, 52px);
+    font-size: clamp(39px, 4vw, 57px);
     font-weight: 500;
 }
 
 .composition-heading p {
     margin-top: 16px;
     opacity: .72;
-    font-size: 15px;
+    font-size: 20px;
     line-height: 1.6;
 }
 
@@ -299,14 +351,14 @@ body.disclaimer-lock {
 
 .ingredient-mini-card h3 {
     font-family: var(--serif);
-    font-size: 22px;
+    font-size: 27px;
     font-weight: 500;
     margin: 0 0 4px;
 }
 
 .ingredient-mini-card span {
     display: block;
-    font-size: 11px;
+    font-size: 16px;
     letter-spacing: .08em;
     color: var(--caramel);
     margin-bottom: 12px;
@@ -314,7 +366,7 @@ body.disclaimer-lock {
 }
 
 .ingredient-mini-card p {
-    font-size: 13.5px;
+    font-size: 18.5px;
     line-height: 1.65;
     opacity: .74;
 }
@@ -334,7 +386,7 @@ body.disclaimer-lock {
     caption-side: top;
     text-align: left;
     padding: 20px 26px 0;
-    font-size: 10px;
+    font-size: 15px;
     letter-spacing: .18em;
     text-transform: uppercase;
     opacity: .55;
@@ -344,7 +396,7 @@ body.disclaimer-lock {
 .composition-table-simple td {
     padding: 16px 26px;
     text-align: left;
-    font-size: 14px;
+    font-size: 19px;
     border-top: 1px solid rgba(42, 23, 15, .12);
 }
 
@@ -372,13 +424,13 @@ body.disclaimer-lock {
 
 .who-its-for-card h3 {
     font-family: var(--serif);
-    font-size: 26px;
+    font-size: 31px;
     font-weight: 500;
     margin: 0 0 16px;
 }
 
 .who-its-for-card p {
-    font-size: 14.5px;
+    font-size: 19.5px;
     line-height: 1.75;
     opacity: .82;
     margin: 0 0 12px;
@@ -400,7 +452,7 @@ body.disclaimer-lock {
 
 .directions-heading h2 {
     font-family: var(--serif);
-    font-size: clamp(34px, 4vw, 52px);
+    font-size: clamp(39px, 4vw, 57px);
     font-weight: 500;
 }
 
@@ -423,14 +475,14 @@ body.disclaimer-lock {
 .directions-steps span {
     display: block;
     font-family: var(--serif);
-    font-size: 13px;
+    font-size: 18px;
     color: var(--caramel);
     letter-spacing: .1em;
     margin-bottom: 12px;
 }
 
 .directions-steps p {
-    font-size: 14px;
+    font-size: 19px;
     line-height: 1.65;
     opacity: .78;
     margin: 0;
@@ -443,7 +495,7 @@ body.disclaimer-lock {
     border-radius: 16px;
     background: rgba(184, 121, 63, .12);
     border: 1px solid rgba(184, 121, 63, .3);
-    font-size: 13px;
+    font-size: 18px;
     line-height: 1.7;
     opacity: .88;
 }
@@ -501,7 +553,7 @@ body.disclaimer-lock {
 .product-spec-table td {
     padding: 17px 20px;
     border-bottom: 1px solid rgba(42,23,15,.11);
-    font-size: 17px;
+    font-size: 22px;
     line-height: 1.45;
     vertical-align: middle;
 }
@@ -528,7 +580,7 @@ body.disclaimer-lock {
 .gallery-strip-heading h2 {
     margin-top: 10px;
     font-family: var(--serif);
-    font-size: clamp(32px,4vw,48px);
+    font-size: clamp(37px,4vw,53px);
     font-weight: 500;
 }
 .gallery-strip-grid {
@@ -544,7 +596,7 @@ body.disclaimer-lock {
     .product-spec-table th,
     .product-spec-table td {
         padding: 14px 15px;
-        font-size: 15px;
+        font-size: 20px;
     }
     .gallery-strip-grid { grid-template-columns: repeat(2, 1fr); }
 }
@@ -582,6 +634,7 @@ body.disclaimer-lock {
     border-radius: 22px;
     overflow: hidden;
     box-shadow: 0 24px 55px rgba(0,0,0,.22);
+    position: relative;
 }
 .yoga-visual img {
     display: block;
@@ -592,3 +645,25 @@ body.disclaimer-lock {
 @media (max-width: 700px) {
     .yoga-visual img { height: 240px; }
 }
+
+/* Auto-rotating slideshow (A COMPLETE RITUAL) */
+.yoga-visual.yoga-slideshow {
+    height: 330px;
+}
+@media (max-width: 700px) {
+    .yoga-visual.yoga-slideshow { height: 240px; }
+}
+.yoga-visual.yoga-slideshow img.yoga-slide {
+    position: absolute;
+    inset: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+.yoga-visual.yoga-slideshow img.yoga-slide.is-active {
+    opacity: 1;
+}
+

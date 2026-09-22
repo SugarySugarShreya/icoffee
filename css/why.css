@@ -89,7 +89,7 @@
 
     color: #b9783d;
     font-family: Georgia, "Times New Roman", serif;
-    font-size: 11px;
+    font-size: 16px;
     letter-spacing: .28em;
 }
 
@@ -98,7 +98,7 @@
 
     color: #2c1a12;
     font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(22px, 1.55vw, 29px);
+    font-size: clamp(27px, 1.55vw, 34px);
     line-height: 1.1;
     font-weight: 400;
 }
@@ -116,7 +116,7 @@
     margin: 0;
 
     color: #6d584b;
-    font-size: 14px;
+    font-size: 19px;
     line-height: 1.65;
 }
 
@@ -203,7 +203,7 @@
     }
 
     .iv-why-item p {
-        font-size: 13px;
+        font-size: 18px;
         line-height: 1.6;
     }
 }
@@ -264,11 +264,11 @@
     }
 
     .iv-why-item h3 {
-        font-size: clamp(21px, 5vw, 26px);
+        font-size: clamp(26px, 5vw, 31px);
     }
 
     .iv-why-item p {
-        font-size: 13px;
+        font-size: 18px;
     }
 }
 
@@ -286,7 +286,7 @@
     }
 
     .iv-why-section > .iv-why-heading h2 {
-        font-size: 38px;
+        font-size: 43px;
         line-height: 1.05;
     }
 

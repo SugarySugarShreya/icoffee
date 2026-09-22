@@ -13,6 +13,19 @@
   document.querySelectorAll('.iv-product-grid,.ingredient-grid,.hub-grid,.hub-stat-grid,.shop-products').forEach(grid => grid.classList.add('motion-stagger'));
   document.querySelectorAll('.motion-stagger').forEach(grid => [...grid.children].forEach((child,i) => child.style.setProperty('--delay', `${Math.min(i,7)*70}ms`)));
 
+  // Auto-rotating lifestyle slideshow (A COMPLETE RITUAL section).
+  document.querySelectorAll('.yoga-slideshow').forEach(visual => {
+    const slides = [...visual.querySelectorAll('.yoga-slide')];
+    if (slides.length < 2) return;
+    let current = slides.findIndex(s => s.classList.contains('is-active'));
+    if (current === -1) current = 0;
+    setInterval(() => {
+      slides[current].classList.remove('is-active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('is-active');
+    }, 5000);
+  });
+
   if (reduce) {
     document.querySelectorAll('.motion-reveal,.motion-stagger').forEach(el => el.classList.add('is-visible'));
     return;
