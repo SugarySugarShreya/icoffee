@@ -1,0 +1,66 @@
+/* =========================================================
+   Accessibility overrides — WCAG AA colour contrast (4.5:1 body, 3:1 large text)
+   Loaded last on every page. Only colours/opacity are changed here;
+   layout, sizes and behaviour are untouched.
+   Palette: --a11y-accent on light backgrounds, --a11y-muted for secondary text.
+========================================================= */
+:root {
+    --a11y-accent: #7a4f22;
+    --a11y-muted: #5f5148;
+    --a11y-latin: #9a3412;
+}
+
+/* ---- Small gold/tan labels on ivory backgrounds (were 2.1–3.3:1) ---- */
+.inner-page .product-specs > .page-eyebrow,
+.inner-page .safety-note strong,
+.inner-page .benefit > span,
+.inner-page .directions-steps li > span {
+    color: var(--a11y-accent) !important;
+    opacity: 1 !important;
+}
+
+/* ---- Muted secondary text on beige cards (were 3.7–4.5:1) ---- */
+.inner-page .science-card .sci-ref,
+.inner-page .faq-section > p,
+.inner-page .faq-section > p a {
+    color: var(--a11y-muted);
+    opacity: 1;
+}
+.inner-page .science-card .sci-latin { color: var(--a11y-latin); }
+.inner-page .page-breadcrumb ol { opacity: .82; }
+.inner-page .detail-copy > span { opacity: .85; }
+
+/* ---- Legal / long-copy pages: text sat under two stacked opacities ---- */
+.inner-page .inner-copy { opacity: 1; }
+.inner-page .inner-copy p { opacity: .9; }
+.inner-page .page-hero .page-eyebrow { opacity: .9; }
+
+/* ---- Home page "Why iCoffee" accents on cream ---- */
+.iv-why-heading .iv-section-label,
+.iv-why-item .iv-why-number { color: var(--a11y-accent); }
+.panel-main .latin-name { color: var(--a11y-latin); }
+.panel-top small { color: #5c452c; }
+.panel-main small,
+.panel-card small { color: #6b5238; }
+
+/* ---- Desktop nav sits on a light hero on inner pages: use dark text until the bar turns dark on scroll ---- */
+@media (min-width: 1051px) {
+    body:has(main.inner-page) .nav:not(.scrolled) .brand-indus,
+    body:has(main.inner-page) .nav:not(.scrolled) .brand-icoffee,
+    body:has(main.inner-page) .nav:not(.scrolled) .nav-links a {
+        color: #2b160c;
+    }
+    body:has(main.inner-page) .nav:not(.scrolled) .brand-divider {
+        background: #2b160c;
+    }
+}
+
+/* ---- Story video: darker top fade so the white "THE icoffee STORY" label stays readable on bright frames ---- */
+.iv-why-video .iv-video-overlay {
+    background: linear-gradient(180deg,
+        rgba(20, 10, 5, .66) 0%,
+        rgba(20, 10, 5, .42) 14%,
+        rgba(20, 10, 5, .04) 42%,
+        rgba(20, 10, 5, .72) 100%);
+}
+.formula-mini-grid small { color: #6b5238; }

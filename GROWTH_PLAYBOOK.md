@@ -23,10 +23,8 @@ Suggested outreach assets:
 - Company/contact details
 
 ## Content publishing
-Ten initial educational articles are in `pages/journal/`. Publish only after reviewing each statement against current packaging, formulation and approved claims. Add a real author/editor and publication date when those details are available.
+The journal section has been removed from this build.
 
-## Real reviews
-`pages/reviews.html` is a genuine-review intake shell. Connect the form to your approved backend/form provider before launch. Do not publish fabricated testimonials. For published reviews, retain permission and moderation records.
 
 ## Conversion optimization
 Primary funnel: Homepage → Product page → Official Store.

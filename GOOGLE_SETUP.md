@@ -9,7 +9,7 @@
 Tracked actions:
 - `view_item` — iCoffee Black / iCoffee Creamer product-page view
 - `select_item` — product CTA click for Black/Creamer
-- `store_click` — click to the official IndusViva store, with location/product context
+- `store_click` — click to the official Indusviva store, with location/product context
 
 ## 2) Google Search Console
 Recommended verification: Domain property.

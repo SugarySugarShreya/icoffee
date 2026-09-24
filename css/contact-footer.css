@@ -8,3 +8,4 @@
 @media (max-width:700px){ .footer-contact-grid{grid-template-columns:1fr; gap:.65rem;} .footer-contact-item{font-size: .9rem;} }
 
 .footer-regulatory{display:flex;flex-direction:column;gap:4px;margin:14px 0;font-size: 16px;opacity:.82}.footer-regulatory small{font-size: 14px;opacity:.65}.footer-bottom a{color:inherit;text-decoration:underline;text-underline-offset:3px}/* white-space:nowrap removed — links wrap naturally on mobile */
+.footer > .footer-bottom{margin-top:2rem;}
