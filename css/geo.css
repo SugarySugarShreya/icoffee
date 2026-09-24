@@ -1,0 +1,87 @@
+/* =========================================================
+   iCOFFEE GEO — Generative Engine Optimization content layer
+   Answer-first, citation-friendly facts that remain visible to users.
+   ========================================================= */
+.geo-answer-hub {
+  max-width: 1180px;
+  margin: 34px auto 72px;
+  padding: 34px 38px;
+  background: rgba(247, 240, 230, 0.92);
+  border: 1px solid rgba(66, 42, 29, 0.12);
+  border-radius: 18px;
+}
+.geo-answer-hub .geo-eyebrow {
+  margin: 0 0 10px;
+  font-size: .75rem;
+  letter-spacing: .18em;
+  font-weight: 700;
+  color: #6d4b37;
+}
+.geo-answer-hub h2 {
+  margin: 0 0 10px;
+  color: #29160e;
+}
+.geo-answer-lead {
+  margin: 0 0 24px;
+  max-width: 850px;
+  color: #513a2b;
+  line-height: 1.7;
+}
+.geo-facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px 18px;
+  margin: 0;
+}
+.geo-fact {
+  padding: 17px 18px;
+  background: #fffaf3;
+  border-radius: 12px;
+}
+.geo-fact dt {
+  margin-bottom: 6px;
+  font-weight: 750;
+  color: #29160e;
+}
+.geo-fact dd {
+  margin: 0;
+  color: #5b4334;
+  line-height: 1.6;
+}
+.geo-qa {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px 18px;
+  margin-top: 18px;
+}
+.geo-qa article {
+  padding: 17px 18px;
+  border-left: 3px solid #8b674f;
+  background: #fffaf3;
+  border-radius: 0 12px 12px 0;
+}
+.geo-qa h3 {
+  margin: 0 0 7px;
+  color: #29160e;
+  font-size: 1rem;
+}
+.geo-qa p {
+  margin: 0;
+  color: #5b4334;
+  line-height: 1.6;
+}
+.geo-store {
+  display: inline-flex;
+  margin-top: 22px;
+  padding: 12px 18px;
+  border-radius: 999px;
+  background: #29160e;
+  color: #fffaf3;
+  text-decoration: none;
+  font-weight: 700;
+}
+.geo-store:hover { opacity: .9; }
+@media (max-width: 760px) {
+  .geo-answer-hub { margin: 24px 18px 50px; padding: 26px 20px; }
+  .geo-facts, .geo-qa { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,670 @@
+/* =========================================================
+   MEDICAL DISCLAIMER GATE
+   Full-screen gradient interstitial shown before the site
+   content. Accepting stores a session flag so it will not
+   re-appear on internal navigation within the same visit.
+========================================================= */
+
+body.disclaimer-lock {
+    overflow: hidden;
+}
+
+.disclaimer-gate {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+
+    background:
+        radial-gradient(circle at 15% 10%, rgba(233, 191, 123, .35), transparent 45%),
+        radial-gradient(circle at 85% 90%, rgba(184, 121, 63, .4), transparent 50%),
+        linear-gradient(135deg, #1c0f09 0%, #29160e 45%, #4a291a 100%);
+
+    animation: disclaimerFadeIn .5s ease both;
+}
+
+.disclaimer-gate--closing {
+    animation: disclaimerFadeOut .45s ease both;
+}
+
+@keyframes disclaimerFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes disclaimerFadeOut {
+    from { opacity: 1; transform: scale(1); }
+    to { opacity: 0; transform: scale(1.02); }
+}
+
+.disclaimer-card {
+    width: 100%;
+    max-width: 640px;
+    max-height: 88vh;
+    display: flex;
+    flex-direction: column;
+
+    background: var(--ivory);
+    color: var(--espresso);
+    border-radius: 22px;
+    box-shadow: 0 40px 90px rgba(0, 0, 0, .45);
+    border: 1px solid rgba(255, 255, 255, .12);
+    overflow: hidden;
+}
+
+.disclaimer-card-inner {
+    padding: 44px 42px 34px;
+    overflow-y: auto;
+}
+
+.disclaimer-eyebrow {
+    display: block;
+    font-size: 13px;
+    letter-spacing: .24em;
+    font-weight: 700;
+    color: var(--caramel);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+}
+
+.disclaimer-card h2 {
+    font-family: var(--serif);
+    font-size: clamp(33px, 4vw, 43px);
+    font-weight: 500;
+    line-height: 1.05;
+    margin: 0 0 20px;
+}
+
+.disclaimer-body {
+    font-size: 16.5px;
+    line-height: 1.75;
+    opacity: .78;
+    max-height: 260px;
+    overflow-y: auto;
+    padding-right: 10px;
+    border-top: 1px solid rgba(42, 23, 15, .14);
+    border-bottom: 1px solid rgba(42, 23, 15, .14);
+    padding-top: 18px;
+    padding-bottom: 18px;
+    margin-bottom: 22px;
+}
+
+.disclaimer-check {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 16px;
+    line-height: 1.5;
+    cursor: pointer;
+    margin-bottom: 22px;
+}
+
+.disclaimer-check input {
+    margin-top: 3px;
+    width: 17px;
+    height: 17px;
+    accent-color: var(--caramel);
+    flex-shrink: 0;
+}
+
+.disclaimer-accept {
+    width: 100%;
+    border: 0;
+    cursor: pointer;
+    padding: 17px 25px;
+    border-radius: 999px;
+    font-size: 14px;
+    letter-spacing: .12em;
+    font-weight: 800;
+    text-transform: uppercase;
+    background: linear-gradient(120deg, var(--gold), var(--caramel));
+    color: #2b160c;
+    transition: transform .25s ease, opacity .25s ease;
+}
+
+.disclaimer-accept:hover:not(:disabled) {
+    transform: translateY(-2px);
+}
+
+.disclaimer-accept:disabled {
+    opacity: .45;
+    cursor: not-allowed;
+}
+
+@media (max-width: 560px) {
+    .disclaimer-card-inner {
+        padding: 32px 24px 26px;
+    }
+
+    .disclaimer-body {
+        max-height: 42vh;
+        font-size: 16px;
+    }
+}
+
+/* =========================================================
+   SHOP NOW — NAV BUTTON TO CLIENT'S STORE LINK
+========================================================= */
+
+.shop-nav-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 15px 30px;
+    border-radius: 999px;
+    background: linear-gradient(120deg, var(--gold), var(--caramel));
+    color: #2b160c;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.shop-nav-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 26px rgba(184, 121, 63, .35);
+}
+
+.inner-page .shop-nav-btn {
+    color: #2b160c;
+}
+
+/* =========================================================
+   SHOP / BUY CTA — FLASH + EYE-CATCHING ANIMATION
+   Applies to every button linked to the store (Shop Now,
+   Buy Now, SHOP icoffee..., sticky CTA, footer store link)
+========================================================= */
+
+@keyframes ctaFlashPulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(242, 199, 126, .65), 0 10px 24px rgba(184, 121, 63, .28);
+        transform: scale(1);
+    }
+    50% {
+        box-shadow: 0 0 0 14px rgba(242, 199, 126, 0), 0 14px 30px rgba(184, 121, 63, .4);
+        transform: scale(1.035);
+    }
+}
+
+@keyframes ctaShine {
+    0% { left: -60%; }
+    100% { left: 130%; }
+}
+
+a[data-store-link] {
+    position: relative;
+    overflow: hidden;
+    animation: ctaFlashPulse 2.2s ease-in-out infinite;
+}
+
+a[data-store-link]::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -60%;
+    width: 45%;
+    height: 100%;
+    background: linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.55) 50%, rgba(255,255,255,0) 100%);
+    transform: skewX(-20deg);
+    animation: ctaShine 2.6s ease-in-out infinite;
+    pointer-events: none;
+}
+
+a[data-store-link]:hover {
+    animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    a[data-store-link],
+    a[data-store-link]::after {
+        animation: none;
+    }
+}
+
+/* =========================================================
+   PRODUCT DETAIL PAGES — EXTRA SECTIONS
+   (icoffee-black.html / icoffee-creamer.html)
+========================================================= */
+
+.quick-facts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px 26px;
+    margin: 28px 0 8px;
+    padding-top: 22px;
+    border-top: 1px solid rgba(42, 23, 15, .16);
+    list-style: none;
+}
+
+.quick-facts li {
+    font-size: 16px;
+    line-height: 1.5;
+    opacity: .82;
+}
+
+.quick-facts li strong {
+    display: block;
+    font-family: var(--serif);
+    font-size: 21px;
+    font-weight: 500;
+    opacity: 1;
+    margin-bottom: 2px;
+}
+
+.detail-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 32px;
+}
+
+.gallery-strip {
+    padding: 20px 7vw 120px;
+    background: var(--ivory);
+}
+
+.gallery-strip-grid {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.gallery-strip-grid figure {
+    margin: 0;
+    background: #eadbc6;
+    border-radius: 18px;
+    padding: 26px 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+}
+
+.gallery-strip-grid img {
+    width: 100%;
+    max-width: 180px;
+    height: 190px;
+    object-fit: contain;
+    filter: drop-shadow(0 18px 20px rgba(0, 0, 0, .16));
+}
+
+.gallery-strip-grid figcaption {
+    font-size: 14px;
+    letter-spacing: .06em;
+    text-align: center;
+    opacity: .68;
+}
+
+.composition-section {
+    padding: 20px 7vw 120px;
+    background: #efe5d6;
+}
+
+.composition-heading {
+    max-width: 780px;
+    margin: 0 auto 50px;
+    text-align: center;
+}
+
+.composition-heading h2 {
+    font-family: var(--serif);
+    font-size: clamp(37px, 4vw, 55px);
+    font-weight: 500;
+}
+
+.composition-heading p {
+    margin-top: 16px;
+    opacity: .72;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.ingredient-mini-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 26px;
+}
+
+.ingredient-mini-card {
+    background: var(--ivory);
+    border-radius: 20px;
+    padding: 30px 26px;
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(41, 22, 14, .08);
+}
+
+.ingredient-mini-card img {
+    width: 84px;
+    height: 84px;
+    object-fit: contain;
+    margin: 0 auto 18px;
+}
+
+.ingredient-mini-card h3 {
+    font-family: var(--serif);
+    font-size: 25px;
+    font-weight: 500;
+    margin: 0 0 4px;
+}
+
+.ingredient-mini-card span {
+    display: block;
+    font-size: 14px;
+    letter-spacing: .08em;
+    color: var(--caramel);
+    margin-bottom: 12px;
+    font-style: italic;
+}
+
+.ingredient-mini-card p {
+    font-size: 16.5px;
+    line-height: 1.65;
+    opacity: .74;
+}
+
+.composition-table-simple {
+    max-width: 640px;
+    margin: 50px auto 0;
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--ivory);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(41, 22, 14, .08);
+}
+
+.composition-table-simple caption {
+    caption-side: top;
+    text-align: left;
+    padding: 20px 26px 0;
+    font-size: 13px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    opacity: .55;
+}
+
+.composition-table-simple th,
+.composition-table-simple td {
+    padding: 16px 26px;
+    text-align: left;
+    font-size: 17px;
+    border-top: 1px solid rgba(42, 23, 15, .12);
+}
+
+.composition-table-simple th {
+    font-weight: 500;
+}
+
+.composition-table-simple td {
+    text-align: right;
+    font-weight: 700;
+}
+
+.who-its-for {
+    padding: 20px 7vw 0;
+}
+
+.who-its-for-card {
+    max-width: 900px;
+    margin: 0 auto;
+    background: linear-gradient(120deg, #2c1a12, #4a291a);
+    color: var(--ivory);
+    border-radius: 24px;
+    padding: 46px 44px;
+}
+
+.who-its-for-card h3 {
+    font-family: var(--serif);
+    font-size: 29px;
+    font-weight: 500;
+    margin: 0 0 16px;
+}
+
+.who-its-for-card p {
+    font-size: 17.5px;
+    line-height: 1.75;
+    opacity: .82;
+    margin: 0 0 12px;
+}
+
+.who-its-for-card p:last-child {
+    margin-bottom: 0;
+}
+
+.directions-section {
+    padding: 120px 7vw;
+}
+
+.directions-heading {
+    max-width: 720px;
+    margin: 0 auto 50px;
+    text-align: center;
+}
+
+.directions-heading h2 {
+    font-family: var(--serif);
+    font-size: clamp(37px, 4vw, 55px);
+    font-weight: 500;
+}
+
+.directions-steps {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0; /* <ol> ships with 40px left padding, which pushed the cards off-centre */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.directions-steps li {
+    list-style: none;
+    background: var(--ivory);
+    border-radius: 18px;
+    padding: 30px 24px;
+    box-shadow: 0 18px 40px rgba(41, 22, 14, .07);
+}
+
+.directions-steps span {
+    display: block;
+    font-family: var(--serif);
+    font-size: 16px;
+    color: var(--caramel);
+    letter-spacing: .1em;
+    margin-bottom: 12px;
+}
+
+.directions-steps p {
+    font-size: 17px;
+    line-height: 1.65;
+    opacity: .78;
+    margin: 0;
+}
+
+.safety-note {
+    max-width: 900px;
+    margin: 60px auto 0;
+    padding: 24px 28px;
+    border-radius: 16px;
+    background: rgba(184, 121, 63, .12);
+    border: 1px solid rgba(184, 121, 63, .3);
+    font-size: 16px;
+    line-height: 1.7;
+    opacity: .88;
+}
+
+.safety-note strong {
+    color: var(--caramel);
+}
+
+@media (max-width: 900px) {
+    .quick-facts {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-strip-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .ingredient-mini-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .directions-steps {
+        grid-template-columns: 1fr;
+    }
+
+    .who-its-for-card {
+        padding: 34px 26px;
+    }
+}
+
+
+/* =========================================================
+   PRODUCT PAGE REFINEMENTS — FINAL
+========================================================= */
+
+/* Easy-to-scan, larger product information table */
+.product-specs {
+    margin-top: 30px;
+}
+.product-specs > .page-eyebrow {
+    display: block;
+    margin-bottom: 12px;
+    color: var(--caramel);
+}
+.product-spec-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(255,255,255,.42);
+    border: 1px solid rgba(42,23,15,.14);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 14px 34px rgba(41,22,14,.06);
+}
+.product-spec-table th,
+.product-spec-table td {
+    padding: 17px 20px;
+    border-bottom: 1px solid rgba(42,23,15,.11);
+    font-size: 20px;
+    line-height: 1.45;
+    vertical-align: middle;
+}
+.product-spec-table tr:last-child th,
+.product-spec-table tr:last-child td {
+    border-bottom: 0;
+}
+.product-spec-table th {
+    width: 40%;
+    text-align: left;
+    font-weight: 600;
+    color: var(--espresso);
+}
+.product-spec-table td {
+    text-align: left;
+    font-weight: 600;
+    color: var(--espresso);
+}
+.gallery-strip-heading {
+    max-width: 900px;
+    margin: 0 auto 34px;
+    text-align: center;
+}
+.gallery-strip-heading h2 {
+    margin-top: 10px;
+    font-family: var(--serif);
+    font-size: clamp(35px, 4vw, 51px);
+    font-weight: 500;
+}
+.gallery-strip-grid {
+    grid-template-columns: repeat(5, 1fr);
+}
+.gallery-strip-grid figure {
+    min-height: 290px;
+}
+@media (max-width: 1100px) {
+    .gallery-strip-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 700px) {
+    .product-spec-table th,
+    .product-spec-table td {
+        padding: 14px 15px;
+        font-size: 18px;
+    }
+    .gallery-strip-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Benefits use readable espresso/brown text instead of white */
+.benefits-page {
+    border-top-color: rgba(42,23,15,.18);
+}
+.benefits-page .benefit {
+    border-right-color: rgba(42,23,15,.14);
+}
+.benefits-page .benefit h3 {
+    color: var(--espresso);
+}
+.benefits-page .benefit p {
+    color: rgba(42,23,15,.74);
+}
+.benefits-page .benefit > span {
+    color: var(--caramel);
+    opacity: .85;
+}
+
+@media (max-width: 900px) {
+    .benefits-page .benefit {
+        border-right: 0;
+        border-bottom: 1px solid rgba(42,23,15,.12);
+    }
+    .benefits-page .benefit:last-child { border-bottom: 0; }
+}
+
+/* Lifestyle image inside A COMPLETE RITUAL */
+.yoga-visual {
+    width: 100%;
+    margin: 0 0 32px;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 24px 55px rgba(0,0,0,.22);
+    position: relative;
+}
+.yoga-visual img {
+    display: block;
+    width: 100%;
+    height: 330px;
+    object-fit: cover;
+}
+@media (max-width: 700px) {
+    .yoga-visual img { height: 240px; }
+}
+
+/* Auto-rotating slideshow (A COMPLETE RITUAL) */
+.yoga-visual.yoga-slideshow {
+    height: 330px;
+}
+@media (max-width: 700px) {
+    .yoga-visual.yoga-slideshow { height: 240px; }
+}
+.yoga-visual.yoga-slideshow img.yoga-slide {
+    position: absolute;
+    inset: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+.yoga-visual.yoga-slideshow img.yoga-slide.is-active {
+    opacity: 1;
+}
+

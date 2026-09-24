@@ -1,0 +1,23 @@
+/* iCoffee content hubs: ingredients, science and preparation */
+.hub-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:38px}.hub-card{background:rgba(255,255,255,.62);border:1px solid rgba(41,22,14,.12);padding:28px;border-radius:2px}.hub-card img{width:100%;height:230px;object-fit:cover;margin-bottom:20px}.hub-card h3{font-size: 28px;margin:0 0 10px}.hub-card p{line-height:1.75}.hub-label{font-size: 15px;letter-spacing:.18em;font-weight:700;display:block;margin-bottom:10px}.hub-table{width:100%;border-collapse:collapse;margin-top:30px;font-size: 20px}.hub-table th,.hub-table td{padding:23px 21px;border-bottom:1px solid rgba(41,22,14,.14);text-align:left;vertical-align:top}.hub-table th{font-size: 16px;letter-spacing:.12em;text-transform:uppercase}.hub-note{margin-top:24px;padding:20px 22px;border-left:3px solid #7b5a43;background:rgba(123,90,67,.08);line-height:1.7}.hub-hero-image{width:100%;max-height:520px;object-fit:cover;margin-top:36px}.hub-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}.hub-faq details{border-top:1px solid rgba(41,22,14,.15);padding:20px 0}.hub-faq summary{font-size: 22px;font-weight:700;cursor:pointer}.hub-faq p{line-height:1.75;margin:14px 0 0}.hub-section{padding:70px 0}.hub-section h2{font-size: clamp(35px, 4vw, 55px);margin-bottom:14px}.hub-lead{max-width:780px;font-size: 22px;line-height:1.8}.hub-stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:28px}.hub-stat{padding:24px;border:1px solid rgba(41,22,14,.12)}.hub-stat strong{display:block;font-size: 31px;margin-bottom:8px}.hub-stat span{line-height:1.55}.hub-article{max-width:900px;margin:0 auto}.hub-article h2{margin-top:45px}.hub-article p,.hub-article li{font-size: 21px;line-height:1.85}.hub-article ul{padding-left:22px}
+/* Tablet: 2-column grids */
+@media(max-width:900px){
+  .hub-grid{grid-template-columns:1fr 1fr}
+  .hub-stat-grid{grid-template-columns:1fr 1fr}
+}
+/* Phone: single column — both grids and scrollable table */
+@media(max-width:620px){
+  .hub-grid,
+  .hub-stat-grid{grid-template-columns:1fr}
+  /* FIX: hub-stat-grid is explicitly listed so it definitely collapses on phones */
+  .hub-table{font-size: 18px;display:block;overflow-x:auto;white-space:normal}
+  .hub-table th,.hub-table td{min-width:150px}
+  .hub-card img{height:210px}
+  .hub-section{padding:48px 0}
+}
+/* Small phones: ensure stat numbers don't crowd */
+@media(max-width:480px){
+  .hub-stat{padding:18px 16px}
+  .hub-stat strong{font-size: 27px}
+}
+

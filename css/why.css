@@ -1,0 +1,310 @@
+/* =========================================================
+   iCoffee WHY — 3-COLUMN RESPONSIVE LAYOUT
+   Extracted from index.html inline style block
+   ========================================================= */
+/* =========================================================
+   iCOFFEE WHY — FINAL 3-COLUMN RESPONSIVE LAYOUT
+   01 + 03 | VIDEO | 02 + 04
+   ========================================================= */
+
+.iv-why-section {
+    width: 100%;
+    padding: 105px 5vw 115px;
+    background: #f7f0e6;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.iv-why-section *,
+.iv-why-section *::before,
+.iv-why-section *::after {
+    box-sizing: border-box;
+}
+
+/* Heading is shared across the complete section */
+.iv-why-section > .iv-why-heading {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto 48px;
+    text-align: center;
+}
+
+.iv-why-section > .iv-why-heading .iv-heading-line {
+    margin: 28px auto 0;
+}
+
+/* Three equal-height areas */
+.iv-why-layout.iv-why-layout--three {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 300px minmax(0, 1fr);
+    grid-template-rows: 1fr;
+    gap: 30px;
+
+    align-items: stretch;
+}
+
+/* Left / right = two compact equal rows */
+.iv-why-column {
+    min-width: 0;
+    min-height: 0;
+
+    display: grid;
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+
+    border-top: 1px solid rgba(88, 57, 37, .18);
+    border-left: 1px solid rgba(88, 57, 37, .18);
+}
+
+.iv-why-column .iv-why-item {
+    min-width: 0;
+    min-height: 0;
+
+    padding: 30px 36px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    border-right: 1px solid rgba(88, 57, 37, .18);
+    border-bottom: 1px solid rgba(88, 57, 37, .18);
+
+    transition: background .35s ease;
+}
+
+.iv-why-column .iv-why-item + .iv-why-item {
+    border-top: 0;
+}
+
+.iv-why-item:hover {
+    background: rgba(255, 255, 255, .42);
+}
+
+.iv-why-number {
+    display: block;
+    margin: 0 0 22px;
+
+    color: #b9783d;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 14px;
+    letter-spacing: .28em;
+}
+
+.iv-why-item h3 {
+    margin: 0;
+
+    color: #2c1a12;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(25px, 1.55vw, 32px);
+    line-height: 1.1;
+    font-weight: 400;
+}
+
+.iv-small-line {
+    width: 42px;
+    height: 1px;
+    margin: 18px 0 20px;
+    flex: 0 0 auto;
+    background: #c99b70;
+}
+
+.iv-why-item p {
+    max-width: 390px;
+    margin: 0;
+
+    color: #6d584b;
+    font-size: 17px;
+    line-height: 1.65;
+}
+
+/* Center video */
+.iv-why-layout--three > .iv-why-video {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+
+    margin: 0;
+
+    overflow: hidden;
+    border-radius: 18px;
+
+    background: #2c1a12;
+
+    box-shadow:
+        0 25px 70px rgba(52, 31, 18, .16);
+
+    align-self: stretch;
+}
+
+.iv-why-layout--three > .iv-why-video .iv-story-video {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Keep overlay/text inside the video */
+.iv-why-layout--three > .iv-why-video .iv-video-overlay,
+.iv-why-layout--three > .iv-why-video .iv-video-top,
+.iv-why-layout--three > .iv-why-video .iv-video-bottom {
+    position: absolute;
+}
+
+/* =========================================================
+   LARGE DESKTOP
+   ========================================================= */
+
+@media (min-width: 1300px) {
+    .iv-why-layout.iv-why-layout--three {
+        grid-template-columns: minmax(0, 1fr) 315px minmax(0, 1fr);
+        gap: 34px;
+    }
+
+    .iv-why-column .iv-why-item {
+        padding: 32px 38px;
+    }
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1050px) {
+    .iv-why-section {
+        padding: 85px 4vw 95px;
+    }
+
+    .iv-why-layout.iv-why-layout--three {
+        grid-template-columns: minmax(0, 1fr) 250px minmax(0, 1fr);
+        gap: 20px;
+    }
+
+    .iv-why-column .iv-why-item {
+        padding: 26px 24px;
+    }
+
+    .iv-why-number {
+        margin-bottom: 17px;
+    }
+
+    .iv-small-line {
+        margin: 15px 0 17px;
+    }
+
+    .iv-why-item p {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+}
+
+/* =========================================================
+   MOBILE / TABLET PORTRAIT
+   01 + 03
+   VIDEO
+   02 + 04
+   ========================================================= */
+
+@media (max-width: 760px) {
+    .iv-why-section {
+        padding: 72px 20px 80px;
+    }
+
+    .iv-why-section > .iv-why-heading {
+        margin-bottom: 34px;
+    }
+
+    .iv-why-layout.iv-why-layout--three {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .iv-why-column {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    .iv-why-column--left {
+        order: 1;
+    }
+
+    .iv-why-layout--three > .iv-why-video {
+        order: 2;
+
+        width: 100%;
+        height: auto;
+        aspect-ratio: 9 / 16;
+
+        min-height: 0;
+        margin: 0;
+
+        border-radius: 15px;
+    }
+
+    .iv-why-column--right {
+        order: 3;
+    }
+
+    .iv-why-column .iv-why-item {
+        min-height: 205px;
+        padding: 27px 22px;
+    }
+
+    .iv-why-item h3 {
+        font-size: clamp(24px, 5vw, 29px);
+    }
+
+    .iv-why-item p {
+        font-size: 16px;
+    }
+}
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 520px) {
+    .iv-why-section {
+        padding: 62px 16px 70px;
+    }
+
+    .iv-why-section > .iv-why-heading {
+        margin-bottom: 28px;
+    }
+
+    .iv-why-section > .iv-why-heading h2 {
+        font-size: 41px;
+        line-height: 1.05;
+    }
+
+    .iv-why-column {
+        grid-template-columns: 1fr;
+    }
+
+    .iv-why-column .iv-why-item {
+        min-height: auto;
+        padding: 27px 21px;
+    }
+
+    .iv-why-column .iv-why-item + .iv-why-item {
+        border-top: 0;
+    }
+
+    .iv-why-layout--three > .iv-why-video {
+        aspect-ratio: 9 / 16;
+        border-radius: 13px;
+    }
+}

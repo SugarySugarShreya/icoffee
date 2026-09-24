@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" role="img" aria-labelledby="title desc">
+  <title id="title">AYUSH Premium Mark</title>
+  <desc id="desc">AYUSH Premium Mark with Quality You Can Trust wording, botanical motif and globe.</desc>
+  <circle cx="250" cy="250" r="242" fill="#fff" stroke="#d5ad28" stroke-width="9"/>
+  <circle cx="250" cy="250" r="224" fill="#1f5b35"/>
+  <circle cx="250" cy="250" r="178" fill="#fff"/>
+  <path d="M72 250a178 178 0 0 0 356 0" fill="none" stroke="#1f5b35" stroke-width="3" opacity=".15"/>
+  <g fill="#315f36" stroke="#315f36">
+    <path d="M184 170c-17-23-15-48 8-66 20 21 20 47 4 68-3 4-8 3-12-2z"/>
+    <path d="M224 167c-5-25 6-45 31-55 7 24-3 45-25 57-3 2-5 1-6-2z"/>
+    <path d="M270 166c6-23 23-36 48-36 0 25-16 42-41 44-4 0-7-3-7-8z"/>
+    <path d="M173 184c21-13 43-11 58 6-20 18-42 17-60 2-4-3-3-6 2-8z"/>
+    <path d="M242 185c20-13 42-10 57 8-20 17-42 16-59 0-3-3-2-6 2-8z"/>
+    <path d="M304 181c17-9 35-5 45 10-16 13-34 12-47 0-3-3-2-7 2-10z"/>
+  </g>
+  <text x="250" y="105" text-anchor="middle" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="35" font-weight="700" letter-spacing="1">QUALITY YOU CAN TRUST</text>
+  <text x="250" y="235" text-anchor="middle" fill="#111" font-family="Arial,Helvetica,sans-serif" font-size="72" font-weight="700" letter-spacing="2">AYUSH</text>
+  <g fill="none" stroke="#315f36" stroke-width="5">
+    <ellipse cx="250" cy="335" rx="92" ry="58"/>
+    <path d="M158 335h184M174 307h152M174 363h152"/>
+    <path d="M250 277c-42 25-42 91 0 116M250 277c42 25 42 91 0 116"/>
+  </g>
+  <path d="M98 381c44 53 101 80 152 80s108-27 152-80" fill="none" stroke="#fff" stroke-width="5"/>
+  <text x="250" y="430" text-anchor="middle" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="42" font-weight="700">Premium</text>
+</svg>
