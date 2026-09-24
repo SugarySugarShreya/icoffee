@@ -459,6 +459,7 @@ a[data-store-link]:hover {
 .directions-steps {
     max-width: 900px;
     margin: 0 auto;
+    padding: 0; /* <ol> ships with 40px left padding, which pushed the cards off-centre */
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;

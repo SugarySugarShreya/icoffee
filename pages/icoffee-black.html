@@ -576,9 +576,15 @@
         /* ---- New: Complications section ---- */
 
         @media (max-width: 900px) {
+            .science-grid {
+                grid-template-columns: 1fr;
+            }
+        }
 
-            .science-grid,
-            .yoga-grid,
+        @media (max-width: 640px) {
+            .yoga-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 760px) {
@@ -805,14 +811,39 @@
         }
 
         @media (max-width: 600px) {
+            /* Docked bar: sits under the content instead of floating over the copy */
             .sticky-shop-cta {
-                bottom: 18px;
-                right: 18px;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: #29160e;
+                border-top: 1px solid rgba(243, 199, 127, .35);
+                padding-bottom: env(safe-area-inset-bottom, 0px);
+                transform: translateY(100%);
+            }
+
+            .sticky-shop-cta.is-visible {
+                transform: translateY(0);
             }
 
             .sticky-shop-cta a {
-                font-size: 17px;
-                padding: 12px 18px;
+                display: flex;
+                justify-content: center;
+                box-sizing: border-box;
+                width: 100%;
+                min-height: 52px;
+                padding: 14px 18px;
+                border-radius: 0;
+                box-shadow: none;
+                animation: none; /* no scale/ring pulse on a full-width bar (it spilled past the screen edges); the shine sweep on ::after stays */
+                font-size: 15px;
+                letter-spacing: .08em;
+            }
+
+            /* keep the last lines of the footer clear of the bar */
+            body.icb-page,
+            body.icr-page {
+                padding-bottom: calc(52px + env(safe-area-inset-bottom, 0px));
             }
         }
     </style>

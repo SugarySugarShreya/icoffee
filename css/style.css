@@ -811,11 +811,33 @@ h2 em {
     cursor: pointer;
     list-style: none;
     font-family: var(--serif);
-    font-size: 29px
+    font-size: 29px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px
 }
 
 .faq-list summary::-webkit-details-marker {
     display: none
+}
+
+/* Open/close indicator — the marker is hidden above, so without this
+   nothing tells the visitor that a question can be expanded. */
+.faq-list summary::after {
+    content: "";
+    flex: 0 0 auto;
+    width: 18px;
+    height: 18px;
+    background:
+        linear-gradient(currentColor, currentColor) center / 100% 1.5px no-repeat,
+        linear-gradient(currentColor, currentColor) center / 1.5px 100% no-repeat;
+    opacity: .7;
+    transition: transform .3s ease
+}
+
+.faq-list details[open] > summary::after {
+    transform: rotate(45deg)
 }
 
 .faq-list p {

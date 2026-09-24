@@ -59,3 +59,13 @@ Serve over HTTPS. Nothing else is required.
 ## Footer (single source)
 Edit `footer.template.html`, then run `python3 build-footer.py` to update every page.
 Colour-contrast overrides live in `css/accessibility.css`.
+
+## Mobile layout fixes (latest)
+
+- **Product pages:** the `@media (max-width: 900px)` block for `.science-grid` / `.yoga-grid` was missing its declarations, so both grids never collapsed on phones (the third science card sat off-screen). Now valid: science → 1 column ≤900px, yoga → 1 column ≤640px. Phone typography for these cards lives in `css/mobile.css` (section 13a).
+- **Directions steps:** `.directions-steps` is an `<ol>`; added `padding: 0` so the cards are centred.
+- **FAQ:** `<summary>` now shows a + / × indicator (`css/style.css`); double padding removed on phones (`css/mobile.css`, section 12).
+- **Sticky shop button:** on ≤600px it is a docked full-width bar (inline `<style>` in each product page). The scale/ring pulse is disabled there; the shine sweep remains.
+- **Homepage "Why iCoffee":** on ≤760px the layout reads video → 01 → 02 → 03 → 04 (columns flattened with `display: contents` + `order`). The 9:16 film is shown in full (max 340px wide) instead of a 220px crop, and its overlay labels are hidden on phones because the film has its own baked-in branding. Desktop is unchanged.
+- **Homepage hero (mobile):** the header stack (announcement 34px + nav 64px = 98px) floats over the hero, but the copy started at `top: 46–52px`, so the eyebrow and headline sat behind the nav. The copy is now anchored to `--hero-header` (98px) + 22px. Hero height is `min(100vw × 1.75, 700px)` (the artwork is 941×1671, so `cover` never crops the sides), the eyebrow stays on one line, and phones ≤340px get a slightly smaller CTA so it clears the product boxes.
+- **Dead band under the hero on load:** `js/animations.js` revealed sections at 10% visibility, which a very tall section can't reach while only a sliver shows under the hero. The reveal threshold is now `0`, so the "A Smarter Cup…" section is visible immediately.
