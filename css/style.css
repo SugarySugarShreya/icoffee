@@ -5176,6 +5176,7 @@ h2 em {
         object-fit: contain;
     }
 }
+<<<<<<< HEAD
 
 /* Shop-section pack rotator: cross-fades pack shots every 2 s (js/shop-rotator.js) */
 .shop-rotator{display:grid;align-items:end;justify-items:center}
@@ -5190,3 +5191,5 @@ h2 em {
   .iv-product-patent{font-size:clamp(7.5px,2.5vw,10px)!important;letter-spacing:.02em!important;text-transform:none!important;white-space:nowrap!important;margin:0 0 12px!important}
   .iv-ayush-mark{width:44px;top:10px;right:10px}
 }
+=======
+>>>>>>> origin/main
